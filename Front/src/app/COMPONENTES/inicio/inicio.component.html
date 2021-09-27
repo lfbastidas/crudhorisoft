@@ -1,0 +1,37 @@
+
+
+
+<div class="container" >
+    <p>lISTA DE UUSUARIOS!</p>
+
+    <button routerLink="/add" type="button" class="btn btn-dark">Agregar </button>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Idendificacion</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>            
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of ListarUsuarios">
+         
+            <th>{{user.id_person}}</th>
+            <th>{{user.number_identification}}</th>
+            <td>{{user.full_name}}</td>
+            <td>{{user.full_last_name}}</td>
+            <td>
+                <button (click)="modificar(user.id_person)" type="button" class="btn btn-primary">Editar</button>
+            </td>
+            <td>
+                <button (click)="eliminar(user.id_person)" type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+
+</div>
